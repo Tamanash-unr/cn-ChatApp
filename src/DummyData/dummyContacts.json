@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1",
+        "name": "Leanne Graham",
+        "profilePic": "https://i.pinimg.com/474x/22/50/f7/2250f78a155b98eea95224b59ff182ab.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Ervin Howell",
+        "profilePic": ""
+    },
+    {
+        "id": "3",
+        "name": "Patricia Lebsack",
+        "profilePic": "https://cms.accuweather.com/wp-content/uploads/2020/01/cropped-vincentiu-solomon-ln5drpv_ImI-unsplash-1-1.jpg?w=300&h=300&crop=1"
+    },
+    {
+        "id": "4",
+        "name": "Chelsey Dietrich",
+        "profilePic": ""
+    },
+    {
+        "id": "5",
+        "name": "Dennis Schulist",
+        "profilePic": ""
+    },
+    {
+        "id": "6",
+        "name": "Kurtis Weissnat",
+        "profilePic": ""
+    },
+    {
+        "id": "7",
+        "name": "Nicholas Runolfsdottir V",
+        "profilePic": ""
+    },
+    {
+        "id": "8",
+        "name": "Glenna Reichert",
+        "profilePic": ""
+    },
+    {
+        "id": "9",
+        "name": "Clementina DuBuque",
+        "profilePic": ""
+    },
+    {
+        "id": "myUser",
+        "name": "John Doe",
+        "profilePic": ""
+    }
+]
