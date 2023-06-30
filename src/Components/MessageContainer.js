@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Message from './Message';
-import { userImage } from './';
+import { userImage, getRandomId } from './';
 import './MessageContainer.css'
 
 function MessageContainer (props) {
@@ -19,10 +19,7 @@ function MessageContainer (props) {
 
     const userData = getUserData(conversationData.contactId);
 
-    // Generate a Random Id for a New Message
-    function getRandomId(minRange, maxRange){
-        return Math.floor(Math.random() * (maxRange - minRange) + minRange).toString();
-    }
+    
 
     function handleSendData(evt){
         if(document.getElementById('message-input').value == ''){

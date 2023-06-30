@@ -5,3 +5,8 @@ export const userImage = (userData) => {
 
     return userData.profilePic;
 }
+
+// Generate a Random Id for a New Message
+export const getRandomId = (minRange, maxRange)=>{
+    return Math.floor(Math.random() * (maxRange - minRange) + minRange).toString();
+}

@@ -3,7 +3,7 @@ import ConversationCard from './ConversationCard';
 import './Conversations.css'
 
 function Conversations (props) {
-    const { conversationData, getUserData, updateConversationId, currentUser } = props;
+    const { conversationData, getUserData, updateConversationId, currentUser, showNewConvDialog } = props;
     const [conversations, setConversations] = useState(props.conversationData);
     const contacts = conversationData.map((conv) => getUserData(conv.contactId));
 
@@ -14,7 +14,7 @@ function Conversations (props) {
     function handleSearch(evt){
         let searchResults = [];
 
-        if(evt.target.value != "" && evt.target.value.length > 2){
+        if(evt.target.value != "" && evt.target.value.length > 1){
             contacts.forEach(element => {
                 if(element.name.toLowerCase().includes(evt.target.value.toLowerCase())){
                     let result = conversations.find((conv) => conv.contactId === element.id);
@@ -38,11 +38,18 @@ function Conversations (props) {
         </div>
         <div className='add-conversation'>
             <strong>CONVERSATIONS</strong>
-            <img style={{cursor: 'pointer'}} width="35" height="35" src="https://img.icons8.com/pastel-glyph/64/ffffff/plus--v1.png" alt="plus--v1" onClick={() => console.log("New Conv")}/>
+            <img style={{cursor: 'pointer'}} width="35" height="35" src="https://img.icons8.com/pastel-glyph/64/ffffff/plus--v1.png" alt="plus--v1" onClick={() => showNewConvDialog(true)}/>
         </div>
         <div className='conversation-list'>
             {conversations.map((conversation) =>{ 
-                return <ConversationCard key={conversation.conversationId} data={conversation} getUser={getUserData} updateConversationId={updateConversationId} currentUser={currentUser}/>
+                return <ConversationCard 
+                            key={conversation.conversationId} 
+                            data={conversation} 
+                            getUser={getUserData} 
+                            updateConversationId={updateConversationId} 
+                            currentUser={currentUser}
+                            newConversation={false}
+                        />
             })}
         </div>
     </div>

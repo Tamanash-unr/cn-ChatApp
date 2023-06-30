@@ -14,9 +14,13 @@ function ConversationCard (props) {
     }
 
     function lastMessage(){
-        const message = data.messages[data.messages.length - 1];
-        const lastText = message.userId === currentUser ? "You: " + message.messageText : message.messageText;
-        
+        let lastText = "";
+
+        if(data.messages.length > 0){
+            const message = data.messages[data.messages.length - 1];
+            lastText = message.userId === currentUser ? "You: " + message.messageText : message.messageText;
+        }
+
         return lastText;
     }
 
