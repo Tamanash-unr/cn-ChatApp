@@ -46,6 +46,8 @@ function Conversations (props) {
         </div>
         <div className='conversation-list'>
             {conversations.map((conversation) =>{ 
+                if (conversation === undefined) return;
+                
                 return <ConversationCard 
                             key={conversation.conversationId} 
                             data={conversation} 
