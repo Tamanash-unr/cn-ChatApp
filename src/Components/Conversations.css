@@ -31,7 +31,7 @@
 }
 
 .conversation-list{
-    overflow: scroll;
+    overflow-y: auto;
     scrollbar-width: thin;
     overflow-x: hidden;
 }   
