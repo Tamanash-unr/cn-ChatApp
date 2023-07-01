@@ -21,13 +21,13 @@ function Conversations (props) {
         if(evt.target.value != "" && evt.target.value.length > 1){
             contacts.forEach(element => {
                 if(element.name.toLowerCase().includes(evt.target.value.toLowerCase())){
-                    let result = conversations.find((conv) => conv.contactId === element.id);
+                    let result = conversations.find((conv) => conv!== undefined && conv.contactId === element.id);
                     if(!searchResults.includes(result)){
                         searchResults.push(result);
                     }
                 }
             });
-
+            
             setConversations(searchResults);
         } else {
             setConversations(conversationData);
