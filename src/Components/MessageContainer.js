@@ -23,6 +23,10 @@ function MessageContainer (props) {
 
     // Handle when user sends a new text message in the coversation
     function handleSendData(evt){
+        if(evt.keyCode !== 13){
+            return;
+        }
+
         if(document.getElementById('message-input').value == ''){
             return;
         }
@@ -50,7 +54,7 @@ function MessageContainer (props) {
             })}
         </div>
         <div className='message-input'>
-            <textarea id="message-input" placeholder='Type your Message Here...'/>
+            <textarea id="message-input" placeholder='Type your Message Here...' onKeyUp={handleSendData}/>
             <button onClick={handleSendData}>
                 <i className='fa fa-paper-plane'/>
             </button>
