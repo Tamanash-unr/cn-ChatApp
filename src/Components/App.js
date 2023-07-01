@@ -7,33 +7,41 @@ import MessageContainer from './MessageContainer';
 import NewConversation from './NewConversation';
 
 function App() {
+  // Dummy Logged in User
   const loggedInUser = "myUser";
+
+  // State Hooks for Contacts, Existing Conversations etc.
   const [contacts, setContacts] = useState([]);
   const [conversations, setConversations] = useState([]);
   const [currentConversationId, setCurrentConversationId] = useState("");
   const [addingConversation, setAddingConversation] = useState(false);
 
+  // Set the states with Dummy Data from JSON for Contacts and Conversations
   useEffect(()=>{
     setContacts(contactList);
     setConversations(conversationList);
   },[]);
-  
+
+  // Returns User Data for given id from Contacts
   function getUserData(userId){
     const userIndex = contacts.map(user => user.id).indexOf(userId);
 
     return contacts[userIndex];
   }
 
+  // Returns Conversation Data for the current selected Conversation by its ID
   function getConversationData(){
     const convIndex = conversations.map(conv => conv.conversationId).indexOf(currentConversationId);
 
     return conversations[convIndex];
   }
 
+  // Set Current Conversation Id
   function updateCurrentConversationId(id){
     setCurrentConversationId(id);
   }
 
+  // Handle Update/Add new messages in the given conversation
   function updateConversationMessages(conversationId, message){
     const conversationIndex = conversations.map((conv) => conv.conversationId).indexOf(conversationId);
 
@@ -45,6 +53,7 @@ function App() {
     setConversations(updatedConversation);
   }
 
+  // Handle Show/Add New Conversation of a contact
   function handleUpdateConversation(newConversation){
     let updatedConversation = [...conversations];
     const conversationIndex = updatedConversation.map((conv) => conv.contactId).indexOf(newConversation.contactId);

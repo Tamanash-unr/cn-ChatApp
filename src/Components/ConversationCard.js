@@ -1,18 +1,15 @@
-import './ConversationCard.css'
+import { userImage } from './';
+import './ConversationCard.css';
+
+// ---- Card Component for every Existing Conversation ----
 
 function ConversationCard (props) {
     const { data, getUser, updateConversationId, currentUser } = props;
 
+    // Get User Data of given Contact Id from Parent State Hook
     const userData = getUser(data.contactId);
 
-    function userImage(){
-        if(userData.profilePic === "") {
-            return "https://png.pngtree.com/png-vector/20220623/ourmid/pngtree-user-avatar-icon-profile-silhouette-png-image_5173766.png";
-        }
-
-        return userData.profilePic;
-    }
-
+    // Get the last message sent in this conversation
     function lastMessage(){
         let lastText = "";
 
@@ -26,7 +23,7 @@ function ConversationCard (props) {
 
     return (
         <div className='conv-card-container' onClick={() => updateConversationId(data.conversationId)}>
-            <img className="profile-pic"  width="100px" height="100px" src={userImage()} alt="..."/>
+            <img className="profile-pic"  width="100px" height="100px" src={userImage(userData)} alt="..."/>
             <div className='conv-info'>
                 <strong>{userData.name}</strong>
                 <small>{lastMessage()}</small>

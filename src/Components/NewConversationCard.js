@@ -1,6 +1,8 @@
 import { userImage, getRandomId } from '.';
 import './ConversationCard.css'
 
+// ---- Component for Displaying Info for every Contact when creating a new Conversation ----
+
 function NewConversationCard (props) {
     const { currentUser, userData, updateConversation } = props;
 

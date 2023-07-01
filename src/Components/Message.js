@@ -1,6 +1,8 @@
 import { userImage } from './';
 import './Message.css'
 
+// ---- Component for Text Message in any Conversation ----
+
 function Message(props){
     const { id, type, content, getUserData } = props;
 

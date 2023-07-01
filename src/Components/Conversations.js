@@ -5,12 +5,16 @@ import './Conversations.css'
 function Conversations (props) {
     const { conversationData, getUserData, updateConversationId, currentUser, showNewConvDialog } = props;
     const [conversations, setConversations] = useState(props.conversationData);
+
+    // Get User Data of the Conversation
     const contacts = conversationData.map((conv) => getUserData(conv.contactId));
 
+    // Set Conversation Data when components have mounted and Data is updated
     useEffect(() => {
         setConversations(conversationData);
      }, [conversationData]);
 
+    // Handle Search Conversation by User Name in Existing Conversations 
     function handleSearch(evt){
         let searchResults = [];
 

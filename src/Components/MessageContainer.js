@@ -11,16 +11,17 @@ function MessageContainer (props) {
         setConversationData(getConversationData());
     },[getConversationData, conversationData])
 
+    // Show Empty message Container if Conversation Data is Undefined
     if(conversationData === undefined){
         return (
             <div className="message-container"></div>
         );
     }
 
+    // Get User Data for the contact in the Conversation
     const userData = getUserData(conversationData.contactId);
 
-    
-
+    // Handle when user sends a new text message in the coversation
     function handleSendData(evt){
         if(document.getElementById('message-input').value == ''){
             return;
