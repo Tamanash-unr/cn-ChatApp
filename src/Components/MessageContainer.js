@@ -22,11 +22,7 @@ function MessageContainer (props) {
     const userData = getUserData(conversationData.contactId);
 
     // Handle when user sends a new text message in the coversation
-    function handleSendData(evt){
-        if(evt.keyCode !== 13){
-            return;
-        }
-
+    function handleSendData(){
         if(document.getElementById('message-input').value == ''){
             return;
         }
@@ -42,6 +38,14 @@ function MessageContainer (props) {
         onSend(conversationData.conversationId, message);
     }
 
+    function handleKeyPress(evt){
+        if(evt.keyCode !== 13){
+            return;
+        }
+
+        handleSendData();
+    }
+
     return (
     <div className="message-container">
         <div className='message-container-info'>
@@ -54,7 +58,7 @@ function MessageContainer (props) {
             })}
         </div>
         <div className='message-input'>
-            <textarea id="message-input" placeholder='Type your Message Here...' onKeyUp={handleSendData}/>
+            <textarea id="message-input" placeholder='Type your Message Here...' onKeyUp={handleKeyPress}/>
             <button onClick={handleSendData}>
                 <i className='fa fa-paper-plane'/>
             </button>
