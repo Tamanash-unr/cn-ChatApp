@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import contactList from '../DummyData/dummyContacts.json';
 import conversationList from '../DummyData/dummyConversations.json';
-import './App.css';
-import Conversations from './Conversations';
-import MessageContainer from './MessageContainer';
-import NewConversation from './NewConversation';
+import '../App.css';
+import Conversations from '../Components/Conversations';
+import MessageContainer from '../Components/MessageContainer';
+import NewConversation from '../Components/NewConversation';
 
-function App() {
+function Home() {
   // Dummy Logged in User
   const loggedInUser = "myUser";
 
@@ -96,4 +96,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

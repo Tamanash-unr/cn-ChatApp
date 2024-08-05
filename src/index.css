@@ -1,3 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-default {
+  background: url('https://img.freepik.com/free-vector/abstract-pattern-design_1053-525.jpg?w=826&t=st=1688126673~exp=1688127273~hmac=30adc4a6b1a3fdc9086174e36bd846da27d775c8f2e24acc68addb801d63144a');
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -8,3 +16,60 @@ body {
 code {
   font-family: 'Poppins', sans-serif;
 }
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.gradient-primary {
+  background: linear-gradient(41deg, #0f7e29, #68de4d);
+}
+
+.gradient-secondary {
+  background: linear-gradient(45deg, #fff, #bcbcbc);
+}
+
